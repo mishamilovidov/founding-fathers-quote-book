@@ -8,24 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		3F4F6F191F69790D009C7B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F6F181F69790D009C7B14 /* AppDelegate.swift */; };
-		3F4F6F1B1F69790D009C7B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4F6F1A1F69790D009C7B14 /* ViewController.swift */; };
 		3F4F6F1E1F69790D009C7B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F6F1C1F69790D009C7B14 /* Main.storyboard */; };
 		3F4F6F201F69790E009C7B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F6F1F1F69790D009C7B14 /* Assets.xcassets */; };
 		3F4F6F231F69790E009C7B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4F6F211F69790E009C7B14 /* LaunchScreen.storyboard */; };
 		C601AE6F1F720CBE0094105B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C601AE6E1F720CBE0094105B /* WebKit.framework */; };
 		C601AE711F720D090094105B /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE701F720D090094105B /* QuoteViewController.swift */; };
+		C601AE771F7219840094105B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE761F7219840094105B /* Quote.swift */; };
+		C601AE791F721AC60094105B /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE781F721AC60094105B /* QuoteDeck.swift */; };
+		C601AE7B1F721FF50094105B /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE7A1F721FF40094105B /* TopicsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F4F6F151F69790D009C7B14 /* Founding Fathers Quote Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Founding Fathers Quote Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4F6F181F69790D009C7B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F4F6F1A1F69790D009C7B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F4F6F1D1F69790D009C7B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F4F6F1F1F69790D009C7B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F4F6F221F69790E009C7B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F4F6F241F69790E009C7B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C601AE6E1F720CBE0094105B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C601AE701F720D090094105B /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
+		C601AE761F7219840094105B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		C601AE781F721AC60094105B /* QuoteDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
+		C601AE7A1F721FF40094105B /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +64,10 @@
 		3F4F6F171F69790D009C7B14 /* Founding Fathers Quote Book */ = {
 			isa = PBXGroup;
 			children = (
-				3F4F6F181F69790D009C7B14 /* AppDelegate.swift */,
-				3F4F6F1A1F69790D009C7B14 /* ViewController.swift */,
-				3F4F6F1C1F69790D009C7B14 /* Main.storyboard */,
-				C601AE701F720D090094105B /* QuoteViewController.swift */,
-				3F4F6F1F1F69790D009C7B14 /* Assets.xcassets */,
-				3F4F6F211F69790E009C7B14 /* LaunchScreen.storyboard */,
-				3F4F6F241F69790E009C7B14 /* Info.plist */,
+				C601AE721F7219070094105B /* Model */,
+				C601AE731F72191E0094105B /* View */,
+				C601AE741F7219240094105B /* Controller */,
+				C601AE751F7219430094105B /* Supporting Files */,
 			);
 			path = "Founding Fathers Quote Book";
 			sourceTree = "<group>";
@@ -77,6 +78,43 @@
 				C601AE6E1F720CBE0094105B /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C601AE721F7219070094105B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C601AE761F7219840094105B /* Quote.swift */,
+				C601AE781F721AC60094105B /* QuoteDeck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C601AE731F72191E0094105B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F6F1C1F69790D009C7B14 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C601AE741F7219240094105B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C601AE701F720D090094105B /* QuoteViewController.swift */,
+				C601AE7A1F721FF40094105B /* TopicsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C601AE751F7219430094105B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F6F1F1F69790D009C7B14 /* Assets.xcassets */,
+				3F4F6F181F69790D009C7B14 /* AppDelegate.swift */,
+				3F4F6F241F69790E009C7B14 /* Info.plist */,
+				3F4F6F211F69790E009C7B14 /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,8 +190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C601AE711F720D090094105B /* QuoteViewController.swift in Sources */,
-				3F4F6F1B1F69790D009C7B14 /* ViewController.swift in Sources */,
+				C601AE771F7219840094105B /* Quote.swift in Sources */,
 				3F4F6F191F69790D009C7B14 /* AppDelegate.swift in Sources */,
+				C601AE7B1F721FF50094105B /* TopicsViewController.swift in Sources */,
+				C601AE791F721AC60094105B /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
