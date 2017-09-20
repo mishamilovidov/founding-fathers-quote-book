@@ -15,6 +15,7 @@
 		C601AE711F720D090094105B /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE701F720D090094105B /* QuoteViewController.swift */; };
 		C601AE771F7219840094105B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE761F7219840094105B /* Quote.swift */; };
 		C601AE791F721AC60094105B /* QuoteDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE781F721AC60094105B /* QuoteDeck.swift */; };
+		C601AE7B1F721FF50094105B /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601AE7A1F721FF40094105B /* TopicsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C601AE701F720D090094105B /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		C601AE761F7219840094105B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		C601AE781F721AC60094105B /* QuoteDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDeck.swift; sourceTree = "<group>"; };
+		C601AE7A1F721FF40094105B /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C601AE701F720D090094105B /* QuoteViewController.swift */,
+				C601AE7A1F721FF40094105B /* TopicsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				C601AE711F720D090094105B /* QuoteViewController.swift in Sources */,
 				C601AE771F7219840094105B /* Quote.swift in Sources */,
 				3F4F6F191F69790D009C7B14 /* AppDelegate.swift in Sources */,
+				C601AE7B1F721FF50094105B /* TopicsViewController.swift in Sources */,
 				C601AE791F721AC60094105B /* QuoteDeck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

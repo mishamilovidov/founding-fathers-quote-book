@@ -19,7 +19,7 @@ class QuoteViewController : UIViewController {
     
     var currentQuoteIndex = 0
     
-    // MARK: - ViewController Lifecycle
+    // MARK: - View controller lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -75,7 +75,7 @@ class QuoteDeck {
         
         for quote in quotes {
             for tag in quote.tags {
-                if tagSet.contains(tag) {
+                if !tagSet.contains(tag) {
                     tagSet.append(tag)
                 }
             }
