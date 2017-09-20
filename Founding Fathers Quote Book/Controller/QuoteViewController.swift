@@ -18,6 +18,7 @@ class QuoteViewController : UIViewController {
     // MARK: - Properties
     
     var currentQuoteIndex = 0
+    var quotes: [Quote]!
     var topic: String?
     
     // MARK: - View controller lifecycle
@@ -25,6 +26,8 @@ class QuoteViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
+        quotes = QuoteDeck.sharedInstance.quotes
         chooseQuoteOfTheDay()
         updateUI()
     }
@@ -40,8 +43,20 @@ class QuoteViewController : UIViewController {
         }
     }
     
+    private func configure() {
+        if let currentTopic = topic {
+            quotes = QuoteDeck.sharedInstance.quotesForTag(currentTopic)
+            currentQuoteIndex = 0
+        } else {
+            quotes = QuoteDeck.sharedInstance.quotes
+            chooseQuoteOfTheDay()
+        }
+        
+        updateUI()
+    }
+    
     private func updateUI() {
-        let currentQuote = QuoteDeck.sharedInstance.quotes[currentQuoteIndex]
+        let currentQuote = quotes[currentQuoteIndex]
         
         webView.loadHTMLString(currentQuote.htmlPage(), baseURL: nil)
     }
@@ -49,12 +64,11 @@ class QuoteViewController : UIViewController {
     // MARK: - Segues
     
     @IBAction func exitModalScene(_ segue: UIStoryboardSegue) {
-        // Nothing to do; jsut need a target for the unwind segue
+        topic = nil
+        configure()
     }
     
     @IBAction func showTopicQuotes(_ segue: UIStoryboardSegue) {
-        if let currentTopic = topic {
-            title = currentTopic
-        }
+        configure()
     }
 }
