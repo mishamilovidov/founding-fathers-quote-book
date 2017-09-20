@@ -252,11 +252,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="CxY-rj-Wlh" kind="unwind" identifier="ShowQuote" unwindAction="showTopicQuotes:" id="HXo-uZ-pqv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6q-Bs-1eY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CxY-rj-Wlh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="820" y="975"/>
+            <point key="canvasLocation" x="820" y="906"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tv6-Q1-6qr">
@@ -274,7 +277,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIZ-Hg-R9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="975"/>
+            <point key="canvasLocation" x="44" y="906"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ncP-Ai-689">
