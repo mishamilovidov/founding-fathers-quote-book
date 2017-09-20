@@ -6,14 +6,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Founding Fathers Quote Book-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Founding Fathers Quote Book" id="BYZ-38-t0r" customClass="ViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Founding Fathers Quote Book" id="BYZ-38-t0r" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,51 +20,43 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="urt-TY-iud">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="47S-ci-mxi">
-                                <rect key="frame" x="109.66666666666669" y="592" width="157" height="106"/>
-                                <subviews>
-                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-gt-1u6">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Set Up"/>
-                                        <connections>
-                                            <segue destination="8MO-QH-LT2" kind="show" id="5JT-dq-JRw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nv8-ED-9wm">
-                                        <rect key="frame" x="0.0" y="38" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Quote of the Day"/>
-                                        <connections>
-                                            <segue destination="UWR-ap-iIV" kind="show" id="1wd-lA-2wB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI7-oG-PTd">
-                                        <rect key="frame" x="0.0" y="76" width="157" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="Da7-jY-vgw"/>
-                                        </constraints>
-                                        <state key="normal" title="Browse Topics"/>
-                                        <connections>
-                                            <segue destination="Tut-f1-fPk" kind="show" id="oiS-vZ-ReL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <wkWebView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2td-by-Qea">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="47S-ci-mxi" firstAttribute="centerX" secondItem="urt-TY-iud" secondAttribute="centerX" id="IvX-q4-P80"/>
+                            <constraint firstItem="2td-by-Qea" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5h1-t9-DBx"/>
                             <constraint firstItem="urt-TY-iud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UDZ-99-QN8"/>
                             <constraint firstItem="urt-TY-iud" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Uou-9t-InG"/>
+                            <constraint firstItem="2td-by-Qea" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z1o-ZV-7sJ"/>
+                            <constraint firstItem="2td-by-Qea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hBG-CD-fTs"/>
+                            <constraint firstAttribute="bottom" secondItem="2td-by-Qea" secondAttribute="bottom" id="izQ-IB-bpB"/>
                             <constraint firstItem="urt-TY-iud" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qyT-uZ-QOF"/>
                             <constraint firstItem="urt-TY-iud" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="uWp-Qf-Omb"/>
-                            <constraint firstItem="47S-ci-mxi" firstAttribute="bottom" secondItem="urt-TY-iud" secondAttribute="bottom" constant="-80" id="v59-Ld-LCN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Founding Fathers Quote Book" id="XNW-4J-Xgo"/>
+                    <navigationItem key="navigationItem" title="Quote of the Day" id="XNW-4J-Xgo">
+                        <barButtonItem key="leftBarButtonItem" title="Topics" id="emM-x5-0B2">
+                            <connections>
+                                <segue destination="y9c-7f-Djm" kind="presentation" id="a3l-Ra-Q04"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="NzK-Nu-6Kd">
+                            <connections>
+                                <segue destination="aGH-UN-JYG" kind="presentation" id="8qC-P6-J0O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="2td-by-Qea" id="v0X-xx-sbt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,10 +122,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J7f-7D-1PF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="GNe-7h-mJA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xf4-1C-DVX">
+                            <connections>
+                                <segue destination="PU8-NC-DTf" kind="unwind" unwindAction="exitModalScene:" id="XhM-d6-GOk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr1-5H-kI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PU8-NC-DTf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="132"/>
+            <point key="canvasLocation" x="1618" y="133"/>
         </scene>
         <!--Notify on Days-->
         <scene sceneID="syL-xz-q1f">
@@ -277,7 +276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVZ-rk-DN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="133"/>
+            <point key="canvasLocation" x="2131" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xCt-Pk-NZ6">
@@ -324,9 +323,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="UWR-ap-iIV" kind="show" id="9RW-yJ-Mt3"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="1ZL-BG-11K" style="IBUITableViewCellStyleDefault" id="tQe-nr-AdW">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -344,9 +340,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="UWR-ap-iIV" kind="show" id="V1z-s2-uFl"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Ko1-1z-I36" style="IBUITableViewCellStyleDefault" id="KMO-Cy-Ylu">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -492,50 +485,57 @@
                             <outlet property="delegate" destination="Tut-f1-fPk" id="fHd-Ct-0Y7"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Topics" id="HGa-ah-GHq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0z3-Um-P5H">
+                            <connections>
+                                <segue destination="CxY-rj-Wlh" kind="unwind" unwindAction="exitModalScene:" id="4FV-S5-yEt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6q-Bs-1eY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CxY-rj-Wlh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="482" y="875"/>
+            <point key="canvasLocation" x="1050" y="1153"/>
         </scene>
-        <!--Quote of the Day-->
-        <scene sceneID="iyW-Vv-f2l">
+        <!--Navigation Controller-->
+        <scene sceneID="tv6-Q1-6qr">
             <objects>
-                <viewController title="Quote of the Day" id="UWR-ap-iIV" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Ps-fU-h6c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-cz-Qrc">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ZqW-cz-Qrc" firstAttribute="leading" secondItem="jgD-LM-6Uv" secondAttribute="leading" id="Jek-vf-o8Y"/>
-                            <constraint firstItem="ZqW-cz-Qrc" firstAttribute="bottom" secondItem="jgD-LM-6Uv" secondAttribute="bottom" id="aad-Ln-bWS"/>
-                            <constraint firstItem="ZqW-cz-Qrc" firstAttribute="top" secondItem="jgD-LM-6Uv" secondAttribute="top" id="dv1-Wx-9PJ"/>
-                            <constraint firstItem="ZqW-cz-Qrc" firstAttribute="trailing" secondItem="jgD-LM-6Uv" secondAttribute="trailing" id="u1p-mA-mAj"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jgD-LM-6Uv"/>
-                    </view>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y9c-7f-Djm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WGz-sy-g8f">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <outlet property="webView" destination="ZqW-cz-Qrc" id="Llq-0y-rGv"/>
+                        <segue destination="Tut-f1-fPk" kind="relationship" relationship="rootViewController" id="3vA-hn-VvD"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZX-yp-5AY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIZ-Hg-R9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="874.8768472906404"/>
+            <point key="canvasLocation" x="482" y="1153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ncP-Ai-689">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aGH-UN-JYG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GN9-Fi-Tny">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8MO-QH-LT2" kind="relationship" relationship="rootViewController" id="DMt-sf-U7C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2s-Tb-Asp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="133"/>
         </scene>
     </scenes>
     <resources>
         <image name="FoundingFathersSquare" width="799" height="799"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="9RW-yJ-Mt3"/>
-    </inferredMetricsTieBreakers>
 </document>
