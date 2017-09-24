@@ -2,8 +2,8 @@
 //  QuoteDeck.swift
 //  Founding Fathers Quote Book
 //
-//  Created by Steve Liddle on 9/9/16.
-//  Copyright © 2016 Steve Liddle. All rights reserved.
+//  Created by Misha Milovidov on 9/19/17.
+//  Copyright © 2017 Misha Milovidov. All rights reserved.
 //
 
 import Foundation
