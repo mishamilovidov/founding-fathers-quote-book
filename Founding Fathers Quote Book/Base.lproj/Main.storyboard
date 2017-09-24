@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JF8-Rd-xFS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Quote of the Day-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="homeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="QuoteViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoundingFathersSquare" translatesAutoresizingMaskIntoConstraints="NO" id="oVJ-Tf-TJ3"/>
+                            <webView alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kl-5U-7F4">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="c4d-dN-YDu" appends="YES" id="M8v-fb-Dd1"/>
+                                    <outletCollection property="gestureRecognizers" destination="62P-yL-gZe" appends="YES" id="e2I-3S-eIn"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6Kl-5U-7F4" secondAttribute="bottom" id="ALs-Z5-4QO"/>
+                            <constraint firstItem="6Kl-5U-7F4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BDi-fp-she"/>
+                            <constraint firstItem="oVJ-Tf-TJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Gsr-Zd-zzr"/>
+                            <constraint firstItem="oVJ-Tf-TJ3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iFt-CJ-fre"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oVJ-Tf-TJ3" secondAttribute="bottom" id="mVN-GV-lA1"/>
+                            <constraint firstItem="6Kl-5U-7F4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pla-QA-oJh"/>
+                            <constraint firstAttribute="trailing" secondItem="6Kl-5U-7F4" secondAttribute="trailing" id="vrm-do-8BV"/>
+                            <constraint firstAttribute="trailing" secondItem="oVJ-Tf-TJ3" secondAttribute="trailing" id="xgz-P9-2yB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quote of the Day" id="sgO-MU-p6D">
+                        <barButtonItem key="leftBarButtonItem" title="Topics" id="vWM-oA-cyn">
+                            <connections>
+                                <action selector="toggleTopics:" destination="BYZ-38-t0r" id="Ql6-Ud-i7c"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="xcY-hC-I2W">
+                            <connections>
+                                <segue destination="UsM-hC-VEA" kind="presentation" modalPresentationStyle="formSheet" id="Doi-2Q-ygj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="toggleButton" destination="vWM-oA-cyn" id="KWJ-Gy-NNU"/>
+                        <outlet property="webView" destination="6Kl-5U-7F4" id="175-Gx-mfo"/>
+                        <segue destination="ebu-7n-pPl" kind="presentation" identifier="ShowTopics" modalPresentationStyle="formSheet" id="OeM-n5-PuL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="c4d-dN-YDu">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="wU2-3y-lve"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="62P-yL-gZe">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="ZxB-bX-MfG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1151.2" y="388.15592203898052"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="KFD-1w-Lxy">
+            <objects>
+                <tableViewController storyboardIdentifier="settingsVC" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kK4-sN-hCg" customClass="SettingsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="VBV-Dn-zQW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="seY-Mb-UPd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="kqe-rm-MeJ">
+                                        <rect key="frame" x="0.0" y="64" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kqe-rm-MeJ" id="6qq-Vb-g9r">
+                                            <frame key="frameInset" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Notify me of the quote of the day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-vy-Eyf">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="dUV-wn-z5r"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wPj-T6-Dxm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9P-Vg-4UT">
+                                                    <connections>
+                                                        <action selector="toggleNotifications:" destination="kK4-sN-hCg" eventType="valueChanged" id="TMf-zj-Ja9"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Sf-vy-Eyf" firstAttribute="centerY" secondItem="V9P-Vg-4UT" secondAttribute="centerY" id="8AO-9G-eyl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="V9P-Vg-4UT" secondAttribute="trailing" constant="12" id="f9z-0L-4TN"/>
+                                                <constraint firstItem="V9P-Vg-4UT" firstAttribute="centerY" secondItem="6qq-Vb-g9r" secondAttribute="centerY" id="kyn-5Z-vAc"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="0Sf-vy-Eyf" secondAttribute="leading" constant="-12" id="nKZ-Xo-2Gm"/>
+                                                <constraint firstItem="V9P-Vg-4UT" firstAttribute="leading" secondItem="0Sf-vy-Eyf" secondAttribute="trailing" constant="8" id="pfI-VW-iTG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="216" id="SAV-FS-CcQ">
+                                        <rect key="frame" x="0.0" y="124" width="414" height="216"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SAV-FS-CcQ" id="NIV-67-G5o">
+                                            <frame key="frameInset" width="414" height="216"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZ7-kA-d1P">
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="kK4-sN-hCg" id="OPc-Yq-9ce"/>
+                                                        <outlet property="delegate" destination="kK4-sN-hCg" id="05V-zh-JPC"/>
+                                                    </connections>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="CZ7-kA-d1P" secondAttribute="bottom" id="6XQ-Hk-eZ2"/>
+                                                <constraint firstItem="CZ7-kA-d1P" firstAttribute="top" secondItem="NIV-67-G5o" secondAttribute="top" id="DkH-Cx-uuv"/>
+                                                <constraint firstAttribute="trailing" secondItem="CZ7-kA-d1P" secondAttribute="trailing" id="ma3-iw-X0e"/>
+                                                <constraint firstItem="CZ7-kA-d1P" firstAttribute="leading" secondItem="NIV-67-G5o" secondAttribute="leading" id="xEv-mZ-cWQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="HzK-8P-zww">
+                                        <rect key="frame" x="0.0" y="340" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzK-8P-zww" id="vNc-zG-iQQ">
+                                            <frame key="frameInset" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqE-bN-6FW">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="gSZ-vM-8TP"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hZ1-rA-pYg"/>
+                                                    </constraints>
+                                                    <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="aKh-MZ-fDm"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7J-hJ-Qri">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="GEu-1h-Xau"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="tQb-nN-IXu"/>
+                                                    </constraints>
+                                                    <state key="normal" title="M"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="fQE-TV-bmm"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmE-Tb-WDG">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="U8L-rz-mB8"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="szT-ZE-q5h"/>
+                                                    </constraints>
+                                                    <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="YBR-fo-eNh"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRU-yH-hId">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="JV9-YI-xss"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="OJY-BW-zul"/>
+                                                    </constraints>
+                                                    <state key="normal" title="W"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="5Kg-Fz-4Q0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-A6-ZcM">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="HJ1-4A-aQf"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="iyX-fX-ULO"/>
+                                                    </constraints>
+                                                    <state key="normal" title="T"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="4hz-ZY-bHO"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-Pe-Idh">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="dsf-nv-alv"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hDQ-iQ-hTg"/>
+                                                    </constraints>
+                                                    <state key="normal" title="F"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="y3y-vc-Sqf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fva-5M-HNM">
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="OMD-uH-gGO"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="bvl-aN-LOg"/>
+                                                    </constraints>
+                                                    <state key="normal" title="S"/>
+                                                    <connections>
+                                                        <action selector="toggleDay:" destination="kK4-sN-hCg" eventType="touchUpInside" id="5uj-lo-kgz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NRU-yH-hId" firstAttribute="centerX" secondItem="vNc-zG-iQQ" secondAttribute="centerX" id="4OD-rL-itF"/>
+                                                <constraint firstItem="tmE-Tb-WDG" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="DqK-tV-aDv"/>
+                                                <constraint firstItem="Fva-5M-HNM" firstAttribute="leading" secondItem="YIR-Pe-Idh" secondAttribute="trailing" constant="8" id="Jhc-29-Bvz"/>
+                                                <constraint firstItem="NRU-yH-hId" firstAttribute="leading" secondItem="tmE-Tb-WDG" secondAttribute="trailing" constant="8" id="Ld3-1X-xOg"/>
+                                                <constraint firstItem="YIR-Pe-Idh" firstAttribute="leading" secondItem="jqR-A6-ZcM" secondAttribute="trailing" constant="8" id="Leu-6z-9TH"/>
+                                                <constraint firstItem="tmE-Tb-WDG" firstAttribute="leading" secondItem="O7J-hJ-Qri" secondAttribute="trailing" constant="8" id="Nth-xk-rVx"/>
+                                                <constraint firstItem="NRU-yH-hId" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="Nw0-GZ-0em"/>
+                                                <constraint firstItem="NRU-yH-hId" firstAttribute="centerY" secondItem="vNc-zG-iQQ" secondAttribute="centerY" id="Odt-yF-FhX"/>
+                                                <constraint firstItem="O7J-hJ-Qri" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="ZRx-0b-JOd"/>
+                                                <constraint firstItem="Fva-5M-HNM" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="mug-6J-cZ6"/>
+                                                <constraint firstItem="jqR-A6-ZcM" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="oul-NS-e2F"/>
+                                                <constraint firstItem="jqR-A6-ZcM" firstAttribute="leading" secondItem="NRU-yH-hId" secondAttribute="trailing" constant="8" id="qBP-E2-Mha"/>
+                                                <constraint firstItem="YIR-Pe-Idh" firstAttribute="top" secondItem="dqE-bN-6FW" secondAttribute="top" id="rnF-C9-SoT"/>
+                                                <constraint firstItem="O7J-hJ-Qri" firstAttribute="leading" secondItem="dqE-bN-6FW" secondAttribute="trailing" constant="8" id="yje-5k-p2t"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="kK4-sN-hCg" id="Q2I-TH-5SD"/>
+                            <outlet property="delegate" destination="kK4-sN-hCg" id="gcA-VU-fh8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Wha-Yl-Cco">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Udn-V0-gX3">
+                            <connections>
+                                <segue destination="VfX-Ek-oE9" kind="unwind" identifier="ExitModal" unwindAction="exitModalScene:" id="ZcS-AV-538"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notificationsSwitch" destination="V9P-Vg-4UT" id="T2e-mT-wZe"/>
+                        <outlet property="pickerView" destination="CZ7-kA-d1P" id="qWk-GA-L8u"/>
+                        <outletCollection property="dayButtons" destination="dqE-bN-6FW" collectionClass="NSMutableArray" id="OeA-2K-7kY"/>
+                        <outletCollection property="dayButtons" destination="O7J-hJ-Qri" collectionClass="NSMutableArray" id="Ntw-rE-0Wm"/>
+                        <outletCollection property="dayButtons" destination="tmE-Tb-WDG" collectionClass="NSMutableArray" id="j83-fK-IPp"/>
+                        <outletCollection property="dayButtons" destination="NRU-yH-hId" collectionClass="NSMutableArray" id="o2z-tM-J7S"/>
+                        <outletCollection property="dayButtons" destination="jqR-A6-ZcM" collectionClass="NSMutableArray" id="sWE-se-YYq"/>
+                        <outletCollection property="dayButtons" destination="YIR-Pe-Idh" collectionClass="NSMutableArray" id="PYi-tc-5dn"/>
+                        <outletCollection property="dayButtons" destination="Fva-5M-HNM" collectionClass="NSMutableArray" id="gWf-IY-BDR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-nd-D6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VfX-Ek-oE9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2815.1999999999998" y="388.15592203898052"/>
+        </scene>
+        <!--Rotating Navigation Controller-->
+        <scene sceneID="IRm-IL-Hbj">
+            <objects>
+                <navigationController storyboardIdentifier="rotatingNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JF8-Rd-xFS" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p0L-iv-a7p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Bfc-YF-k54"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnE-UY-jo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="389"/>
+        </scene>
+        <!--Topics-->
+        <scene sceneID="th6-li-1cO">
+            <objects>
+                <tableViewController storyboardIdentifier="topicsVC" title="Topics" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLd-mw-wVF" customClass="TopicsViewController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TopicsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kd9-hR-mQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TopicCell" textLabel="Qai-4u-xtj" style="IBUITableViewCellStyleDefault" id="9Ga-Wt-RIp">
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ga-Wt-RIp" id="TaU-zn-qcc">
+                                    <frame key="frameInset" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qai-4u-xtj">
+                                            <frame key="frameInset" minX="15" width="384" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vdA-be-5xv" kind="unwind" identifier="ShowQuote" unwindAction="showTopicQuotes:" id="Tp1-u5-rkY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="qLd-mw-wVF" id="DYa-Ru-F7Z"/>
+                            <outlet property="delegate" destination="qLd-mw-wVF" id="sU1-m1-HoE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Topics" id="Dm9-bC-viG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="v9J-SK-ZAX">
+                            <connections>
+                                <segue destination="vdA-be-5xv" kind="unwind" unwindAction="exitModalScene:" id="Flq-5Q-wkb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6J-np-O7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vdA-be-5xv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1985" y="1172"/>
+        </scene>
+        <!--Rotating Navigation Controller-->
+        <scene sceneID="YVY-Yr-Iyz">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UsM-hC-VEA" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LoO-9f-mtA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kK4-sN-hCg" kind="relationship" relationship="rootViewController" id="2fr-IX-KlP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oM-ax-TDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="388"/>
+        </scene>
+        <!--Rotating Navigation Controller-->
+        <scene sceneID="zY5-n5-BAR">
+            <objects>
+                <navigationController storyboardIdentifier="TopicsNavVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebu-7n-pPl" customClass="RotatingNavigationController" customModule="Founding_Fathers_Quote_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="75c-aS-4WS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qLd-mw-wVF" kind="relationship" relationship="rootViewController" id="91s-xT-PM3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bq6-Zp-3uk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="1171.6641679160421"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FoundingFathersSquare" width="799" height="799"/>
+    </resources>
+</document>
